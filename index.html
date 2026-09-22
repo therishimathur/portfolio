@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10100f">
+<meta name="description" content="Rishi Mathur — UX, Product, Visual & Digital Designer. A curated index of work, experiments and professional links.">
+<title>Rishi Mathur — Digital Index</title>
+
+<style>
+/* =========================================================
+   RISHI HUB V5 — EDITORIAL / DIGITAL INDEX
+
+   DESIGN DIRECTION
+   This version intentionally avoids:
+   - glassmorphism
+   - glowing borders
+   - neon gradients
+   - floating cards
+   - excessive animation
+
+   It uses:
+   - editorial typography
+   - strong hierarchy
+   - quiet dark surfaces
+   - thin rules
+   - generous whitespace
+   - numbered navigation
+   - restrained accent color
+
+   CONTENT EDITING
+   Every .item is one link.
+   Copy an .item to add another.
+   Delete an .item to remove one.
+   Change href, number, icon, title,
+   description and category.
+   ========================================================= */
+
+:root{
+  --bg:#10100f;
+  --surface:#171715;
+  --surface-2:#1c1c19;
+  --text:#f1efe9;
+  --muted:#9c9a92;
+  --quiet:#696861;
+  --rule:#302f2b;
+  --rule-light:#41403a;
+  --accent:#d9ff63;
+  --accent-dark:#b6d94d;
+  --max:1180px;
+  --radius:12px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+
+*{box-sizing:border-box}
+
+html{
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px),
+    var(--bg);
+  background-size:48px 48px;
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+
+a{color:inherit}
+
+.page{
+  width:min(calc(100% - 48px),var(--max));
+  margin:auto;
+}
+
+/* ---------- TOP BAR ---------- */
+
+.topbar{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--rule);
+}
+
+.wordmark{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:-.1px;
+}
+
+.wordmark-mark{
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--rule-light);
+  border-radius:7px;
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+}
+
+.top-note{
+  color:var(--quiet);
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:80px;
+  padding:72px 0 60px;
+  border-bottom:1px solid var(--rule);
+}
+
+.hero-kicker{
+  margin-bottom:20px;
+  color:var(--accent);
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+
+h1{
+  max-width:850px;
+  margin:0;
+  font-size:clamp(52px,8vw,104px);
+  line-height:.88;
+  letter-spacing:-6px;
+  font-weight:760;
+}
+
+.hero-copy{
+  max-width:680px;
+  margin:29px 0 0;
+  color:#b7b5ae;
+  font-size:16px;
+  line-height:1.65;
+}
+
+.hero-side{
+  align-self:end;
+}
+
+.hero-side-label{
+  margin-bottom:12px;
+  color:var(--quiet);
+  font-size:10px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+.hero-side p{
+  margin:0;
+  color:#b0aea7;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.availability{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:20px;
+  color:#d1d0c9;
+  font-size:11px;
+}
+
+.availability-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+/* ---------- SEARCH / TOOLS ---------- */
+
+.tools{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:16px;
+  align-items:center;
+  padding:22px 0;
+  border-bottom:1px solid var(--rule);
+}
+
+.search{
+  position:relative;
+  max-width:620px;
+}
+
+.search input{
+  width:100%;
+  height:46px;
+  padding:0 44px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  outline:none;
+  color:var(--text);
+  background:#141412;
+  font:inherit;
+  font-size:13px;
+  transition:border-color .2s,background .2s;
+}
+
+.search input::placeholder{color:#65645e}
+
+.search input:focus{
+  border-color:#57564e;
+  background:#181815;
+}
+
+.search svg{
+  position:absolute;
+  left:14px;
+  top:50%;
+  width:17px;
+  height:17px;
+  transform:translateY(-50%);
+  color:#77766f;
+  pointer-events:none;
+}
+
+.search-clear{
+  position:absolute;
+  right:8px;
+  top:50%;
+  width:30px;
+  height:30px;
+  transform:translateY(-50%);
+  display:none;
+  place-items:center;
+  border:0;
+  border-radius:6px;
+  color:#aaa89f;
+  background:transparent;
+  cursor:pointer;
+}
+
+.search-clear:hover{background:#24241f;color:#fff}
+
+#resultMeta{
+  min-height:0;
+  margin-top:8px;
+  color:#696861;
+  font-size:10px;
+}
+
+.social-nav{
+  display:flex;
+  gap:7px;
+}
+
+.social-nav a{
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--rule);
+  border-radius:7px;
+  color:#9b9991;
+  text-decoration:none;
+  transition:color .2s,border-color .2s,background .2s;
+}
+
+.social-nav a:hover{
+  color:var(--accent);
+  border-color:#4d4c44;
+  background:#181815;
+}
+
+.social-nav svg{width:16px;height:16px}
+
+/* ---------- SECTIONS ---------- */
+
+.section{
+  padding:50px 0 0;
+}
+
+.section-header{
+  display:grid;
+  grid-template-columns:70px minmax(0,1fr) auto;
+  gap:18px;
+  align-items:end;
+  padding-bottom:13px;
+  border-bottom:1px solid var(--rule-light);
+}
+
+.section-number{
+  color:var(--accent);
+  font-family:"SF Mono",ui-monospace,monospace;
+  font-size:10px;
+}
+
+.section-title{
+  margin:0;
+  font-size:19px;
+  letter-spacing:-.4px;
+  font-weight:700;
+}
+
+.section-description{
+  margin:4px 0 0;
+  color:var(--quiet);
+  font-size:11px;
+}
+
+.section-count{
+  color:var(--quiet);
+  font-family:"SF Mono",ui-monospace,monospace;
+  font-size:10px;
+}
+
+/* ---------- LINK ITEMS ---------- */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  margin-top:1px;
+  background:var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+
+
+.item[hidden]{
+  display:none !important;
+}
+
+.item{
+  position:relative;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  padding:23px 22px 19px;
+  text-decoration:none;
+  background:var(--surface);
+  overflow:hidden;
+  transition:background .2s,transform .2s;
+}
+
+.item:hover{
+  background:var(--surface-2);
+  z-index:2;
+}
+
+.item:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:-2px;
+}
+
+.item.featured{
+  background:#1a1a17;
+}
+
+.item.featured:hover{
+  background:#20201b;
+}
+
+.item-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+
+
+.item-type{
+  margin-top:0;
+  color:var(--accent);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.item-title{
+  margin-top:7px;
+  max-width:310px;
+  font-size:19px;
+  line-height:1.13;
+  letter-spacing:-.5px;
+  font-weight:700;
+}
+
+.item-description{
+  max-width:330px;
+  margin-top:9px;
+  color:#8e8d86;
+  font-size:12px;
+  line-height:1.55;
+}
+
+.item-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:auto;
+  padding-top:25px;
+  color:#7c7b74;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.item-arrow{
+  width:27px;
+  height:27px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--rule-light);
+  border-radius:50%;
+  transition:background .2s,color .2s,transform .2s;
+}
+
+.item:hover .item-arrow{
+  color:var(--bg);
+  background:var(--accent);
+  border-color:var(--accent);
+  transform:rotate(45deg);
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:34px 0 44px;
+  margin-top:54px;
+  border-top:1px solid var(--rule);
+  color:var(--quiet);
+  font-size:10px;
+}
+
+.footer a{
+  color:#8b8a83;
+  text-decoration:none;
+}
+
+.footer a:hover{color:var(--accent)}
+
+.no-results{
+  display:none;
+  padding:50px 0;
+  text-align:center;
+  color:var(--quiet);
+  font-size:13px;
+}
+
+.no-results strong{
+  display:block;
+  margin-bottom:5px;
+  color:#c2c0b8;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr 230px;
+    gap:45px;
+  }
+
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:650px){
+  .page{width:min(calc(100% - 28px),560px)}
+
+  .topbar{min-height:64px}
+  .top-note{display:none}
+
+  .hero{
+    display:block;
+    padding:48px 0 38px;
+  }
+
+  h1{
+    font-size:clamp(52px,16vw,78px);
+    letter-spacing:-4px;
+  }
+
+  .hero-copy{
+    margin-top:23px;
+    font-size:14px;
+  }
+
+  .hero-side{
+    margin-top:28px;
+    padding-top:21px;
+    border-top:1px solid var(--rule);
+  }
+
+  .tools{
+    display:block;
+    padding:16px 0;
+  }
+
+  .social-nav{
+    margin-top:12px;
+  }
+
+  .section{
+    padding-top:38px;
+  }
+
+  .section-header{
+    grid-template-columns:42px minmax(0,1fr) auto;
+  }
+
+  .section-title{font-size:17px}
+  .section-description{display:none}
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .item{
+    min-height:188px;
+    padding:21px 18px 17px;
+  }
+
+  .item-type{margin-top:0}
+  .item-title{font-size:18px}
+
+  .footer{
+    display:block;
+    line-height:1.8;
+  }
+
+  .footer a{display:inline-block;margin-top:8px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+</style>
+</head>
+
+<body id="top">
+
+<main class="page">
+
+  <!-- ======================================================
+       HEADER
+       ====================================================== -->
+
+  <header class="topbar">
+    <a href="#top" class="wordmark">
+      <span class="wordmark-mark">R</span>
+      <span>Rishi Mathur</span>
+    </a>
+    <span class="top-note">Personal digital index · 2026</span>
+  </header>
+
+  <section class="hero">
+
+    <div>
+      <div class="hero-kicker">Designer · Builder · Creative Consultant</div>
+
+      <h1>Think. Design. Ship.</h1>
+
+      <p class="hero-copy">
+        UX / Product / Visual Designer creating digital experiences,
+        physical products, visual systems and small things that actually ship.
+      </p>
+    </div>
+
+    <aside class="hero-side">
+      <div class="hero-side-label">About</div>
+      <p>
+        Explore my selected work, experiments, case studies, interviews,
+        mentoring profile and professional resources.
+      </p>
+
+      <div class="availability">
+        <span class="availability-dot"></span>
+        Open to select opportunities
+      </div>
+    </aside>
+
+  </section>
+
+  <!-- ======================================================
+       SEARCH + SOCIALS
+       ====================================================== -->
+
+  <div class="tools">
+
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="11" cy="11" r="6.5"></circle>
+        <path d="m16 16 5 5"></path>
+      </svg>
+
+      <input id="searchInput"
+             type="search"
+             placeholder="Search projects, portfolio, interviews…"
+             autocomplete="off"
+             spellcheck="false"
+             aria-label="Search links">
+
+      <button id="clearSearch" class="search-clear" aria-label="Clear search">×</button>
+    </div>
+
+    <!-- Replace the placeholder href values with your real social URLs. -->
+    <nav class="social-nav" aria-label="Social profiles">
+
+      <a href="https://www.linkedin.com/in/rishimathurin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.5 8.2H3V21h3.5V8.2ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.65c0-3.82-2.04-5.6-4.76-5.6-2.2 0-3.18 1.21-3.73 2.06V8.2H9V21h3.51v-6.34c0-1.67.32-3.29 2.39-3.29 2.04 0 2.07 1.92 2.07 3.4V21H21v-7.35Z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.instagram.com/therishimathur_" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/>
+          <circle cx="12" cy="12" r="4.1"/>
+          <circle cx="17.5" cy="6.7" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+
+      <a href="https://www.youtube.com/channel/UCCDfsrzGNRVg9Zmo2j6ALVA" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21.6 7.1a2.75 2.75 0 0 0-1.94-1.95C17.95 4.7 12 4.7 12 4.7s-5.95 0-7.66.45A2.75 2.75 0 0 0 2.4 7.1C1.95 8.8 1.95 12 1.95 12s0 3.2.45 4.9a2.75 2.75 0 0 0 1.94 1.95c1.71.45 7.66.45 7.66.45s5.95 0 7.66-.45a2.75 2.75 0 0 0 1.94-1.95c.45-1.7.45-4.9.45-4.9s0-3.2-.45-4.9ZM10 15.15v-6.3L15.4 12 10 15.15Z"/>
+        </svg>
+      </a>
+
+      <a href="mailto:designsparklebyrishi@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <rect x="3" y="5" width="18" height="14" rx="3"/>
+          <path d="m4.5 7 7.5 6 7.5-6"/>
+        </svg>
+      </a>
+
+    </nav>
+
+  </div>
+
+  <div id="resultMeta" aria-live="polite"></div>
+
+  <div id="content">
+
+    <!-- ======================================================
+         SECTION 01
+         ====================================================== -->
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-number">01</div>
+        <div>
+          <h2 class="section-title">Start here</h2>
+          <p class="section-description">The work I want you to see first.</p>
+        </div>
+        <div class="section-count">03</div>
+      </div>
+
+      <div class="grid">
+
+        <!-- COPY THIS .item TO ADD A LINK -->
+        <a class="item featured"
+           href="https://drive.google.com/file/d/1m5eIaBmg0aWvRX07P22RpbCpSyHakjYQ/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer">
+<div class="item-type">Portfolio</div>
+          <div class="item-title">Master Portfolio</div>
+          <div class="item-description">UX, Product, Visual Design, Animation and selected work.</div>
+
+          <div class="item-footer">
+            <span>Open portfolio</span>
+            <span class="item-arrow">↗</span>
+          </div>
+        </a>
+
+        <a class="item featured"
+           href="https://natashastyleapp.github.io/app/"
+           target="_blank" rel="noopener noreferrer">
+<div class="item-type">Product</div>
+          <div class="item-title">Natasha — Your Human Stylist</div>
+          <div class="item-description">A personal styling product designed and shipped from idea to experience.</div>
+
+          <div class="item-footer">
+            <span>Explore product</span>
+            <span class="item-arrow">↗</span>
+          </div>
+        </a>
+
+        <a class="item featured"
+           href="https://drive.google.com/drive/folders/1_-66zymvy_afSHcOmWT3UQ4P0u6DZEBW"
+           target="_blank" rel="noopener noreferrer">
+<div class="item-type">Experiments</div>
+          <div class="item-title">HTML Apps & Experiments</div>
+          <div class="item-description">Small browser products and experiments built with HTML, CSS and JavaScript.</div>
+
+          <div class="item-footer">
+            <span>See experiments</span>
+            <span class="item-arrow">↗</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 02
+         ====================================================== -->
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-number">02</div>
+        <div>
+          <h2 class="section-title">Selected work</h2>
+          <p class="section-description">UX, product, visual and physical design.</p>
+        </div>
+        <div class="section-count">08</div>
+      </div>
+
+      <div class="grid">
+
+        <a class="item" href="https://drive.google.com/file/d/1G_P4PplcV_nAZqiGaJ_ILhwLqnv9Dawi/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Case study</div>
+          <div class="item-title">University of People — Conversion Flow</div>
+          <div class="item-description">Conversion flow revamp and experience design.</div>
+          <div class="item-footer"><span>View case study</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/file/d/1N79GxM9AgUle1Hdho_jabtny2Vt-_8S7/view" target="_blank" rel="noopener noreferrer">
+<div class="item-type">UX</div>
+          <div class="item-title">Quora UX Redesign</div>
+          <div class="item-description">Heuristics, interaction and experience redesign.</div>
+          <div class="item-footer"><span>View project</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/file/d/19iGDxIvD70aOwl5orVabg088Zr2oK8jo/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Enterprise UX</div>
+          <div class="item-title">HP Enterprise UX Redesign</div>
+          <div class="item-description">Selected enterprise UX and visual design work.</div>
+          <div class="item-footer"><span>View project</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/file/d/1xqO935Ud50b5J2VAsTgvg2MMNaIbSMed/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">OTT</div>
+          <div class="item-title">ZEE5 OTT App Redesign</div>
+          <div class="item-description">OTT experience and interface exploration.</div>
+          <div class="item-footer"><span>View project</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/drive/folders/1iGkYYP_p_RQb8HJdwcZjyL_PFbXvsTph?usp=drive_link" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Visual design</div>
+          <div class="item-title">PowerPoint / Presentation Design</div>
+          <div class="item-description">Presentation systems, decks and visual storytelling.</div>
+          <div class="item-footer"><span>View samples</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/file/d/1OJcAJE3gD7AEMJ74b5oFYGT0NM2tT0sA/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Product design</div>
+          <div class="item-title">Footwear Design Portfolio</div>
+          <div class="item-description">Footwear, accessories and physical product exploration.</div>
+          <div class="item-footer"><span>View portfolio</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/drive/folders/12wGBYMOYx87LpjpDxG5CywiQoaSax4vn?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Download</div>
+          <div class="item-title">Master Portfolio — HD Download</div>
+          <div class="item-description">High-resolution portfolio files.</div>
+          <div class="item-footer"><span>Open files</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://opensea.io/RishiMathur" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Art</div>
+          <div class="item-title">Digital Artworks</div>
+          <div class="item-description">Digital art and visual experiments.</div>
+          <div class="item-footer"><span>View artworks</span><span class="item-arrow">↗</span></div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION 03
+         ====================================================== -->
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-number">03</div>
+        <div>
+          <h2 class="section-title">Elsewhere</h2>
+          <p class="section-description">Interviews, mentoring, resources and professional links.</p>
+        </div>
+        <div class="section-count">06</div>
+      </div>
+
+      <div class="grid">
+
+        <a class="item" href="https://freelancelifemagazine.com/rishi-mathur/" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Interview</div>
+          <div class="item-title">Freelance Life Magazine</div>
+          <div class="item-description">Interview about design, freelancing and the creative journey.</div>
+          <div class="item-footer"><span>Read interview</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/drive/folders/1aqnd_T4mf02ZalgPsoVnLFlTc3kNiCLk?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Press</div>
+          <div class="item-title">Interview — Mint Newspaper</div>
+          <div class="item-description">Featured interview and press material.</div>
+          <div class="item-footer"><span>View feature</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/drive/folders/1WkUQe7e5JSVkg3CIjAFruzr1VcqTi3NZ?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Interview</div>
+          <div class="item-title">Interview — SugarMint</div>
+          <div class="item-description">Creative career and design perspective.</div>
+          <div class="item-footer"><span>Read interview</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://app.designlab.com/theRishiMathur/" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Mentor</div>
+          <div class="item-title">DesignLab Mentor Profile</div>
+          <div class="item-description">Mentoring, UX feedback and design conversations.</div>
+          <div class="item-footer"><span>View profile</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://bit.ly/3IpdKj6" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Work</div>
+          <div class="item-title">Join My Team</div>
+          <div class="item-description">Work with me on selected design and creative projects.</div>
+          <div class="item-footer"><span>Get in touch</span><span class="item-arrow">↗</span></div>
+        </a>
+
+        <a class="item" href="https://drive.google.com/drive/folders/1quoZMvj3fK8bIdZNlQshLbfcLCpVbeRJ?usp=sharing" target="_blank" rel="noopener noreferrer">
+<div class="item-type">Resume</div>
+          <div class="item-title">Download My Resume</div>
+          <div class="item-description">Current resume and professional profile.</div>
+          <div class="item-footer"><span>Open resume</span><span class="item-arrow">↗</span></div>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <div id="noResults" class="no-results">
+    <strong>No matching link</strong>
+    Try another word or clear the search.
+  </div>
+
+  <footer class="footer">
+    <span>© 2026 Rishi Mathur · Designed & built independently</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+</main>
+
+<script>
+const input=document.getElementById('searchInput');
+const clear=document.getElementById('clearSearch');
+const resultMeta=document.getElementById('resultMeta');
+const noResults=document.getElementById('noResults');
+const sections=[...document.querySelectorAll('.section')];
+const items=[...document.querySelectorAll('.item')];
+
+function filterItems(){
+  const query=input.value.trim().toLowerCase();
+  let visible=0;
+
+  items.forEach(item=>{
+    const searchable=[
+      item.querySelector('.item-title')?.textContent || '',
+      item.querySelector('.item-description')?.textContent || '',
+      item.querySelector('.item-type')?.textContent || ''
+    ].join(' ').toLowerCase();
+
+    const match=!query || searchable.includes(query);
+    item.hidden=!match;
+    if(match) visible++;
+  });
+
+  sections.forEach(section=>{
+    const hasVisible=section.querySelector('.item:not([hidden])');
+    section.hidden=!hasVisible;
+  });
+
+  clear.style.display=query?'grid':'none';
+  noResults.style.display=query && !visible?'block':'none';
+
+  resultMeta.textContent=query
+    ? `${visible} ${visible===1?'result':'results'}`
+    : '';
+}
+
+input.addEventListener('input',filterItems);
+
+clear.addEventListener('click',()=>{
+  input.value='';
+  filterItems();
+  input.focus();
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='/' && document.activeElement!==input){
+    e.preventDefault();
+    input.focus();
+  }
+
+  if(e.key==='Escape' && document.activeElement===input && input.value){
+    input.value='';
+    filterItems();
+  }
+});
+</script>
+
+</body>
+</html>
